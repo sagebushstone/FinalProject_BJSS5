@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\FinalProject_BJSS5.props" />
+</Project>
