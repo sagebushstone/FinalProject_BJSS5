@@ -9,7 +9,7 @@
         public string Movie { get; set; }
         public string Drink { get; set; }
 
-        public string GetBooks()
+        public string GetFavorite()
         {
             return $"{Id}  {Name}  {Food}  {Color}  {Movie}  {Drink}";
         }
