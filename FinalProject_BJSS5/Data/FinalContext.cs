@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using FinalProject_BJSS5.Models;
+using System;
 
 namespace FinalProject_BJSS5.Data
 {
@@ -7,13 +8,20 @@ namespace FinalProject_BJSS5.Data
     {
         public FinalContext(DbContextOptions<FinalContext> options) :
             base(options) { }
+        public DbSet<Intro> Intros { get; set; }
         public DbSet<Book> Books { get; set;}
         public DbSet<Favorite> Favorites{ get; set; }
-
         public DbSet<Hobbies> Hobbies { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Intro>().HasData(
+               new Intro { Id = 1, FirstName = "Bidhatri", LastName = "Amatya", BirthDate = new DateOnly(2002, 11, 6), CollegeProgram = "BS Information Technology (Software Development/Data Technologies)", CollegeYear = 3 },
+                new Intro { Id = 2, FirstName = "Jasmine", LastName = "Lim Smith", BirthDate = new DateOnly(2002, 5, 30), CollegeProgram = "BS Information Technology (Software Development)", CollegeYear = 2 },
+                new Intro { Id = 3, FirstName = "Sage", LastName = "Bushtone", BirthDate = new DateOnly(2005, 2, 26), CollegeProgram = "BS Information Technology (Software Development/Data Technologies).", CollegeYear = 2 },
+                new Intro { Id = 4, FirstName = "Sydney", LastName = "Jacob", BirthDate = new DateOnly(2003, 3, 14), CollegeProgram = "BS Information Technology (Game Design and Simulation)", CollegeYear = 3 }
+               );
+
             modelBuilder.Entity<Book>().HasData(
                new Book { Id = 1, Name = "Bidhatri", Title = "Little Women", Author = "Louisa May Alcott", Publisher = "Simon & Schuster", PublishYear = 1868},
                 new Book { Id = 2, Name = "Jasmine", Title = "Days at the Morisaki Bookshop", Author = "Satoshi Yagisawa", Publisher = "Harper Perennial", PublishYear = 2023 },
