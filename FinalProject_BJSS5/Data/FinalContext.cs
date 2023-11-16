@@ -16,10 +16,10 @@ namespace FinalProject_BJSS5.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Intro>().HasData(
-               new Intro { Id = 1, FirstName = "Bidhatri", LastName = "Amatya", BirthDate = new DateOnly(2002, 11, 6), CollegeProgram = "BS Information Technology (Software Development/Data Technologies)", CollegeYear = 3 },
-                new Intro { Id = 2, FirstName = "Jasmine", LastName = "Lim Smith", BirthDate = new DateOnly(2002, 5, 30), CollegeProgram = "BS Information Technology (Software Development)", CollegeYear = 2 },
-                new Intro { Id = 3, FirstName = "Sage", LastName = "Bushtone", BirthDate = new DateOnly(2005, 2, 26), CollegeProgram = "BS Information Technology (Software Development/Data Technologies).", CollegeYear = 2 },
-                new Intro { Id = 4, FirstName = "Sydney", LastName = "Jacob", BirthDate = new DateOnly(2003, 3, 14), CollegeProgram = "BS Information Technology (Game Design and Simulation)", CollegeYear = 3 }
+               new Intro { Id = 1, FirstName = "Bidhatri", LastName = "Amatya", BirthDate = new DateTime(2002, 11, 6), CollegeProgram = "BS Information Technology (Software Development/Data Technologies)", CollegeYear = 3 },
+                new Intro { Id = 2, FirstName = "Jasmine", LastName = "Lim Smith", BirthDate = new DateTime(2002, 5, 30), CollegeProgram = "BS Information Technology (Software Development)", CollegeYear = 2 },
+                new Intro { Id = 3, FirstName = "Sage", LastName = "Bushtone", BirthDate = new DateTime(2005, 2, 26), CollegeProgram = "BS Information Technology (Software Development/Data Technologies).", CollegeYear = 2 },
+                new Intro { Id = 4, FirstName = "Sydney", LastName = "Jacob", BirthDate = new DateTime(2003, 3, 14), CollegeProgram = "BS Information Technology (Game Design and Simulation)", CollegeYear = 3 }
                );
 
             modelBuilder.Entity<Book>().HasData(
