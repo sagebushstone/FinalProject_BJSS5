@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\sageb\\OneDrive\\Documents\\School\\College\\Contemporary Programming\\Final\\FinalProject_BJSS5\\FinalProject_BJSS5\\FinalProject_BJSS5.csproj": {}
+    "C:\\Users\\sageb\\OneDrive\\Documents\\School\\College\\Contemporary Programming\\FinalProject_BJSS5\\FinalProject_BJSS5\\FinalProject_BJSS5.csproj": {}
   },
   "projects": {
-    "C:\\Users\\sageb\\OneDrive\\Documents\\School\\College\\Contemporary Programming\\Final\\FinalProject_BJSS5\\FinalProject_BJSS5\\FinalProject_BJSS5.csproj": {
+    "C:\\Users\\sageb\\OneDrive\\Documents\\School\\College\\Contemporary Programming\\FinalProject_BJSS5\\FinalProject_BJSS5\\FinalProject_BJSS5.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\sageb\\OneDrive\\Documents\\School\\College\\Contemporary Programming\\Final\\FinalProject_BJSS5\\FinalProject_BJSS5\\FinalProject_BJSS5.csproj",
+        "projectUniqueName": "C:\\Users\\sageb\\OneDrive\\Documents\\School\\College\\Contemporary Programming\\FinalProject_BJSS5\\FinalProject_BJSS5\\FinalProject_BJSS5.csproj",
         "projectName": "FinalProject_BJSS5",
-        "projectPath": "C:\\Users\\sageb\\OneDrive\\Documents\\School\\College\\Contemporary Programming\\Final\\FinalProject_BJSS5\\FinalProject_BJSS5\\FinalProject_BJSS5.csproj",
+        "projectPath": "C:\\Users\\sageb\\OneDrive\\Documents\\School\\College\\Contemporary Programming\\FinalProject_BJSS5\\FinalProject_BJSS5\\FinalProject_BJSS5.csproj",
         "packagesPath": "C:\\Users\\sageb\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\sageb\\OneDrive\\Documents\\School\\College\\Contemporary Programming\\Final\\FinalProject_BJSS5\\FinalProject_BJSS5\\obj\\",
+        "outputPath": "C:\\Users\\sageb\\OneDrive\\Documents\\School\\College\\Contemporary Programming\\FinalProject_BJSS5\\FinalProject_BJSS5\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\sageb\\AppData\\Roaming\\NuGet\\NuGet.Config",

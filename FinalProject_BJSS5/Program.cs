@@ -9,6 +9,8 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<FinalContext>(options =>
 options.UseSqlServer(builder.Configuration.GetConnectionString("FinalContext")));
 
+builder.Services.AddSwaggerDocument();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -31,6 +33,9 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.UseAuthorization();
+
+app.UseOpenApi();
+app.UseSwaggerUi3();
 
 app.MapControllerRoute(
     name: "default",

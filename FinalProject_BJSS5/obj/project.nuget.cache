@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "09+nBz+lsDWkQwDdN9kEAsdZMWmgSZIOKOzedgVp4NB/FkiQ5r6jsLgONkObw+ppNYpNMtuTNaKwrj0sbuKeFg==",
+  "dgSpecHash": "0b0kZiEO4cX6HpPs8beh5VDTFffmSvAfURm0cjukUHSkKl6fIDyQnpWOr75SFjkI+s53dgKBkHYz1Y7iXLQPyA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\sageb\\OneDrive\\Documents\\School\\College\\Contemporary Programming\\Final\\FinalProject_BJSS5\\FinalProject_BJSS5\\FinalProject_BJSS5.csproj",
+  "projectFilePath": "C:\\Users\\sageb\\OneDrive\\Documents\\School\\College\\Contemporary Programming\\FinalProject_BJSS5\\FinalProject_BJSS5\\FinalProject_BJSS5.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\sageb\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\sageb\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
