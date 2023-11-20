@@ -1,19 +1,69 @@
 ﻿using FinalProject_BJSS5.Data;
 using Microsoft.AspNetCore.Mvc;
+using FinalProject_BJSS5.Models;
 
 namespace FinalProject_BJSS5.Controllers
 {
+    [ApiController]
+    [Route("[controller]")]
     public class BookController : Controller
     {
-        FinalContext ctx;
-        public BookController(FinalContext ctx)
+        IFinalService ctx;
+        public BookController(IFinalService ctx)
         {
             this.ctx = ctx;
         }
-        public IActionResult Index()
+
+        [HttpGet]
+        [Route("getbooks")]
+        public IActionResult GetBooks()
         {
-            return Ok(ctx.Books.ToList());
-            //return View();
+            return Ok(ctx.GetAllBooks());
         }
+
+        [HttpPost]
+        [Route("createbook")]
+        public IActionResult PostBook(Book p)
+        {
+            var result = ctx.AddBook(p);
+            if (result == null)
+            {
+                return StatusCode(500, "A book with this ID already exists");
+            }
+            if (result == 0)
+            {
+                return StatusCode(500, "An error occured while processing your request.");
+            }
+            return Ok();
+        }
+
+        [HttpPut]
+        [Route("updatebook")]
+        public IActionResult PutBook(Book b)
+        {
+            var result = ctx.UpdateBook(b);
+            if (result == 0)
+            {
+                return StatusCode(500, "An error occured while processing your request");
+            }
+            return Ok();
+        }
+
+        [HttpDelete("bookid")]
+        public IActionResult DeleteBook(int id)
+        {
+            var book = ctx.GetBookById(id);
+            if (book == null)
+            {
+                return NotFound(id);
+            }
+            var result = ctx.RemoveBookById(id);
+            if (result == 0)
+            {
+                return StatusCode(500, "An error occured while processing your request");
+            }
+            return Ok();
+        }
+
     }
 }

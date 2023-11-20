@@ -11,6 +11,8 @@ options.UseSqlServer(builder.Configuration.GetConnectionString("FinalContext")))
 
 builder.Services.AddSwaggerDocument();
 
+builder.Services.AddScoped<IFinalService, FinalService>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
