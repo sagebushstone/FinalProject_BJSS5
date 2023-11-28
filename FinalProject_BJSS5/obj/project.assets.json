@@ -5948,19 +5948,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\sageb\\.nuget\\packages\\": {}
+    "C:\\Users\\Hiyal\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\sageb\\OneDrive\\Documents\\School\\College\\Contemporary Programming\\Final\\FinalProject_BJSS5\\FinalProject_BJSS5\\FinalProject_BJSS5.csproj",
+      "projectUniqueName": "C:\\Users\\Hiyal\\OneDrive\\Documents\\GitHub\\FinalProject_BJSS5\\FinalProject_BJSS5\\FinalProject_BJSS5.csproj",
       "projectName": "FinalProject_BJSS5",
-      "projectPath": "C:\\Users\\sageb\\OneDrive\\Documents\\School\\College\\Contemporary Programming\\Final\\FinalProject_BJSS5\\FinalProject_BJSS5\\FinalProject_BJSS5.csproj",
-      "packagesPath": "C:\\Users\\sageb\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\sageb\\OneDrive\\Documents\\School\\College\\Contemporary Programming\\Final\\FinalProject_BJSS5\\FinalProject_BJSS5\\obj\\",
+      "projectPath": "C:\\Users\\Hiyal\\OneDrive\\Documents\\GitHub\\FinalProject_BJSS5\\FinalProject_BJSS5\\FinalProject_BJSS5.csproj",
+      "packagesPath": "C:\\Users\\Hiyal\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Hiyal\\OneDrive\\Documents\\GitHub\\FinalProject_BJSS5\\FinalProject_BJSS5\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\sageb\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Hiyal\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -6020,7 +6020,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
       }
     }
   }

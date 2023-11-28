@@ -14,6 +14,11 @@ namespace FinalProject_BJSS5.Data
         // FAVORITE TABLE
 
         // HOBBY TABLE
+        List<Hobbies> GetAllHobbies();
+        List<Hobbies> GetHobbyById(int? id);
+        int? AddHobby(Hobbies b);
+        int? UpdateHobby(Hobbies b);
+        int? RemoveHobbyById(int id);
 
         // INTRO TABLE
     }
