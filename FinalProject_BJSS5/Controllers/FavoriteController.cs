@@ -13,7 +13,7 @@ namespace FinalProject_BJSS5.Controllers
         public IActionResult Index()
         {
             return Ok(ctx.Favorites.ToList());
-            //return View();
+            
         }
     }
 }
