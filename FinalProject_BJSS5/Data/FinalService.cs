@@ -44,8 +44,46 @@ namespace FinalProject_BJSS5.Data
             ctx.Books.Remove(book);
             return ctx.SaveChanges();
         }
-
         // FAVORITE TABLE
+        public List<Favorite> GetAllFavorites()
+        {
+            return ctx.Favorites.ToList();
+        }
+
+        public Favorite GetFavoriteById(int id)
+        {
+            return ctx.Favorites.FirstOrDefault(x => x.Id == id);
+        }
+
+        public int? AddFavorite(Favorite f)
+        {
+            var favorite = this.GetFavoriteById(f.Id);
+            if (favorite != null)
+            {
+                return null;
+            }
+            ctx.Favorites.Add(f);
+            return ctx.SaveChanges();
+        }
+
+        public int? UpdateFavorite(Favorite f)
+        {
+            ctx.Favorites.Update(f);
+            return ctx.SaveChanges();
+        }
+
+        public int? RemoveFavoriteById(int id)
+        {
+            var favorite = this.GetFavoriteById(id);
+            if (favorite == null)
+            {
+                return null;
+            }
+            ctx.Favorites.Remove(favorite);
+            return ctx.SaveChanges();
+        }
+
+        
 
         // HOBBY TABLE
 
