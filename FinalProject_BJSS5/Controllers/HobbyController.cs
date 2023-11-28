@@ -34,12 +34,12 @@ namespace FinalProject_BJSS5.Controllers
 
         [HttpPost]
         [Route("createhobby")]
-        public IActionResult PostHobby(Hobbies p)
+        public IActionResult PostHobby(Hobbies h)
         {
-            var result = ctx.AddHobby(p);
+            var result = ctx.AddHobby(h);
             if (result == null)
             {
-                return StatusCode(500, "A book with this ID already exists");
+                return StatusCode(500, "A hobby with this ID already exists");
             }
             if (result == 0)
             {
@@ -50,9 +50,9 @@ namespace FinalProject_BJSS5.Controllers
 
         [HttpPut]
         [Route("updatehobby")]
-        public IActionResult PutHobby(Hobbies b)
+        public IActionResult PutHobby(Hobbies h)
         {
-            var result = ctx.UpdateHobby(b);
+            var result = ctx.UpdateHobby(h);
             if (result == 0)
             {
                 return StatusCode(500, "An error occured while processing your request");
@@ -70,7 +70,7 @@ namespace FinalProject_BJSS5.Controllers
             }
             if (result == null)
             {
-                return StatusCode(500, "Product not found.");
+                return StatusCode(500, "Hobby not found.");
             }
             return Ok();
         }

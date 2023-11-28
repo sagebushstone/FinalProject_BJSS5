@@ -26,10 +26,6 @@ namespace FinalProject_BJSS5.Data
         public int? AddBook(Book b)
         {
             var book = this.GetBookById(b.Id);
-            /*if (book != null)
-            {
-                return null;
-            }*/
             ctx.Books.Add(b);
             return ctx.SaveChanges();
         }
@@ -66,23 +62,19 @@ namespace FinalProject_BJSS5.Data
 
         public List<Hobbies> GetHobbyById(int? id)
         {
-           // if (id == 0 || id == null)
-           // {
-           //     return ctx.Hobbies.Take(5).Cast<Hobbies>().ToList();
-           // }
             return ctx.Hobbies.Where(item => item.Id == id).Cast<Hobbies>().ToList();
         }
 
-        public int? AddHobby(Hobbies b)
+        public int? AddHobby(Hobbies h)
         {
-            var hobby = this.GetHobbyById(b.Id);
-            ctx.Hobbies.Add(b);
+            var hobby = this.GetHobbyById(h.Id);
+            ctx.Hobbies.Add(h);
             return ctx.SaveChanges();
         }
 
-        public int? UpdateHobby(Hobbies b)
+        public int? UpdateHobby(Hobbies h)
         {
-            ctx.Hobbies.Update(b);
+            ctx.Hobbies.Update(h);
             return ctx.SaveChanges();
         }
 

@@ -33,9 +33,9 @@ namespace FinalProject_BJSS5.Controllers
 
         [HttpPost]
         [Route("createbook")]
-        public IActionResult PostBook(Book p)
+        public IActionResult PostBook(Book b)
         {
-            var result = ctx.AddBook(p);
+            var result = ctx.AddBook(b);
             if (result == null)
             {
                 return StatusCode(500, "A book with this ID already exists");
@@ -62,11 +62,6 @@ namespace FinalProject_BJSS5.Controllers
         [HttpDelete("bookid")]
         public IActionResult DeleteBook(int id)
         {
-            /*var book = ctx.GetBookById(id);
-            if (book == null)
-            {
-                return NotFound(id);
-            }*/
             var result = ctx.RemoveBookById(id);
             if (result == 0)
             {
@@ -74,7 +69,7 @@ namespace FinalProject_BJSS5.Controllers
             }
             if (result == null)
             {
-                return StatusCode(500, "Product not found.");
+                return StatusCode(500, "Book not found.");
             }
             return Ok();
         }
