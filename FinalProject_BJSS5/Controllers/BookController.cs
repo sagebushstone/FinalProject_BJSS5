@@ -21,6 +21,16 @@ namespace FinalProject_BJSS5.Controllers
             return Ok(ctx.GetAllBooks());
         }
 
+        [HttpGet("id")]
+        public IActionResult GetBooks(int id) 
+        {
+            if (ctx.GetBookById(id).Count == 0)
+            {
+                return Ok(ctx.GetBookById(0));
+            }
+            return Ok(ctx.GetBookById(id));
+        }
+
         [HttpPost]
         [Route("createbook")]
         public IActionResult PostBook(Book p)
@@ -52,15 +62,19 @@ namespace FinalProject_BJSS5.Controllers
         [HttpDelete("bookid")]
         public IActionResult DeleteBook(int id)
         {
-            var book = ctx.GetBookById(id);
+            /*var book = ctx.GetBookById(id);
             if (book == null)
             {
                 return NotFound(id);
-            }
+            }*/
             var result = ctx.RemoveBookById(id);
             if (result == 0)
             {
                 return StatusCode(500, "An error occured while processing your request");
+            }
+            if (result == null)
+            {
+                return StatusCode(500, "Product not found.");
             }
             return Ok();
         }

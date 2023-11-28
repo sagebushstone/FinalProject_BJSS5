@@ -15,17 +15,21 @@ namespace FinalProject_BJSS5.Data
         {
             return ctx.Books.ToList();
         }
-        public Book GetBookById(int id)
+        public List<Book> GetBookById(int? id)
         {
-            return ctx.Books.FirstOrDefault(x => x.Id == id);
+            if(id == 0 || id == null)
+            {
+                return ctx.Books.Take(5).Cast<Book>().ToList();
+            }
+            return ctx.Books.Where(item => item.Id == id).Cast<Book>().ToList();
         }
         public int? AddBook(Book b)
         {
             var book = this.GetBookById(b.Id);
-            if (book != null)
+            /*if (book != null)
             {
                 return null;
-            }
+            }*/
             ctx.Books.Add(b);
             return ctx.SaveChanges();
         }
@@ -36,12 +40,16 @@ namespace FinalProject_BJSS5.Data
         }
         public int? RemoveBookById(int id)
         {
-            var book = this.GetBookById(id);
+            var book = GetBookById(id);
             if (book == null)
             {
                 return null;
             }
-            ctx.Books.Remove(book);
+            if(book.FirstOrDefault() == null)
+            {
+                return null;
+            }
+            ctx.Books.Remove(book.FirstOrDefault());
             return ctx.SaveChanges();
         }
 

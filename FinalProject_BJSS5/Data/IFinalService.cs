@@ -6,7 +6,7 @@ namespace FinalProject_BJSS5.Data
     {
         // BOOK TABLE
         List<Book> GetAllBooks();
-        Book GetBookById(int id);
+        List<Book> GetBookById(int? id);
         int? AddBook(Book b);
         int? UpdateBook(Book b);
         int? RemoveBookById(int id);
