@@ -13,7 +13,7 @@ namespace FinalProject_BJSS5.Data
 
         // FAVORITE TABLE
         List<Favorite> GetAllFavorites();
-        Favorite GetFavoriteById(int id);
+        Favorite? GetFavoriteById(int? id);
         int? AddFavorite(Favorite f);
         int? UpdateFavorite(Favorite f);
         int? RemoveFavoriteById(int id);

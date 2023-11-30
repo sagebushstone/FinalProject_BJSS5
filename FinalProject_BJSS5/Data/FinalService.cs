@@ -1,4 +1,5 @@
 ﻿﻿using FinalProject_BJSS5.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace FinalProject_BJSS5.Data
 {
@@ -57,14 +58,19 @@ namespace FinalProject_BJSS5.Data
             return ctx.Favorites.ToList();
         }
 
-        public Favorite GetFavoriteById(int id)
+        public Favorite? GetFavoriteById(int? id)
         {
+            if(id == 0 || id == null)
+            {
+                return null;
+            }
             return ctx.Favorites.FirstOrDefault(x => x.Id == id);
         }
 
+
         public int? AddFavorite(Favorite f)
         {
-            var favorite = this.GetFavoriteById(f.Id);
+            var favorite = GetFavoriteById(f.Id);
             if (favorite != null)
             {
                 return null;
@@ -75,7 +81,18 @@ namespace FinalProject_BJSS5.Data
 
         public int? UpdateFavorite(Favorite f)
         {
-            ctx.Favorites.Update(f);
+            var favorite = GetFavoriteById(f.Id);
+            if (favorite == null)
+            {
+                return null;
+            }
+            favorite.Food = f.Food;
+            favorite.Name = f.Name;
+            favorite.Movie = f.Movie;
+            favorite.Drink = f.Drink;
+            favorite.Color = f.Color;
+
+            ctx.Favorites.Update(favorite);
             return ctx.SaveChanges();
         }
 
@@ -125,7 +142,7 @@ namespace FinalProject_BJSS5.Data
             ctx.Hobbies.Remove(hobby.FirstOrDefault());
             return ctx.SaveChanges();
         }
-
+        
         // INTRO TABLE
         public List<Intro> GetAllIntros()
         {
