@@ -27,7 +27,7 @@ namespace FinalProject_BJSS5.Controllers
             var favorite = ctx.GetFavoriteById(id);
             if (favorite == null)
             {
-                return NotFound(id);
+                return StatusCode(404, "No favorite item found");
             }
 
             return Ok(favorite);
@@ -58,21 +58,24 @@ namespace FinalProject_BJSS5.Controllers
             {
                 return StatusCode(500, "An error occured while processing your request");
             }
-            return Ok();
+            if (result == null)
+            {
+               return StatusCode(404, "No favorite item found");
+            }
+            return Ok(f);
         }
 
         [HttpDelete("removefavorite")]
         public IActionResult DeleteFavorite(int id)
-        {
-            var favorite = ctx.GetFavoriteById(id);
-            if (favorite == null)
-            {
-                return NotFound(id);
-            }
+        {            
             var result = ctx.RemoveFavoriteById(id);
             if (result == 0)
             {
                 return StatusCode(500, "An error occured while processing your request");
+            }
+            if (result == null)
+            {
+               return StatusCode(404, "No favorite item found");
             }
             return Ok();
         }
