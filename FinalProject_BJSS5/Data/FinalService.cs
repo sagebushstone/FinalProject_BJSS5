@@ -127,5 +127,43 @@ namespace FinalProject_BJSS5.Data
         }
 
         // INTRO TABLE
+        public List<Intro> GetAllIntros()
+        {
+            return ctx.Intros.ToList();
+        }
+
+        public List<Intro> GetIntroById(int? id)
+        {
+            if (id != 0 || id != null)
+            {
+                return ctx.Intros.Where(item => item.Id == id).ToList();
+            }
+            return ctx.Intros.Take(5).ToList();
+        }
+
+        public int? AddIntro(Intro i)
+        {
+            var intro = this.GetIntroById(i.Id);
+            ctx.Intros.Add(i);
+            return ctx.SaveChanges();
+        }
+
+        public int? UpdateIntro(Intro i)
+        {
+            ctx.Intros.Update(i);
+            return ctx.SaveChanges();
+        }
+
+        public int? RemoveIntroById(int id)
+        {
+            var intro = GetIntroById(id);
+            if (intro == null || intro.FirstOrDefault() == null)
+            {
+                return null;
+            }
+            ctx.Intros.Remove(intro.FirstOrDefault());
+            return ctx.SaveChanges();
+        }
+
     }
 }

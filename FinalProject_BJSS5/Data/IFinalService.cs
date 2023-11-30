@@ -26,5 +26,10 @@ namespace FinalProject_BJSS5.Data
         int? RemoveHobbyById(int id);
 
         // INTRO TABLE
+        List<Intro> GetAllIntros();
+        List<Intro> GetIntroById(int? id);
+        public int? AddIntro(Intro i);
+        public int? UpdateIntro(Intro i);
+        int? RemoveIntroById(int id);
     }
 }
