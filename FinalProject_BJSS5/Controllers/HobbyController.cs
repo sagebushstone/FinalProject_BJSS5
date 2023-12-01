@@ -45,7 +45,7 @@ namespace FinalProject_BJSS5.Controllers
             {
                 return StatusCode(500, "An error occured while processing your request.");
             }
-            return Ok();
+            return Ok(h);
         }
 
         [HttpPut]
